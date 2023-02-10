@@ -1,0 +1,29 @@
+# CREACIÓN BASE DE DATOS
+
+# Entramos como administrador con privilegios
+SYSTEM as sysdba
+# Saber si nuestro conectable fue creado
+show pdbs;
+# Ingresar al conectable
+Alter session set container = ConectableFIFA;
+# Verificar nos encontramos dentro del conectable
+show con_name;
+# Abrir la base de datos
+alter database open;
+# Generar el usuario identificado por su clave
+create user DBProgramaAyudaClubesFIFA identified by Oracle48574;
+# Conceder privilegios al usuario
+grant connect, resource, DBA to DBProgramaAyudaClubesFIFA;
+# Conectarnos al usuario
+connect DBProgramaAyudaClubesFIFA@ConectableFIFA
+Oracle48574
+
+# Codigo a agregar en caso de error
+ConectableFIFA =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = LAPTOP-UAEKE80C)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ConectableFIFA)
+    )
+  )

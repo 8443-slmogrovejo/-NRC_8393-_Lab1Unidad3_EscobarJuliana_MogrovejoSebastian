@@ -1,0 +1,6 @@
+CREACIÓN ÍNDICES
+
+CREATE UNIQUE INDEX "IxVarCuentaBancariaClub" ON "TBClub"("VarCuentaBancariaClub");
+CREATE UNIQUE INDEX "IxVarNombreParam" ON "TBParametro"("VarNombreParam");
+CREATE UNIQUE INDEX "IxVarCuentaBancariaAgF" ON "TBAgFinanciero"("VarCuentaBancariaAgF");
+CREATE UNIQUE INDEX "IxVarCorreoP" ON "TBPersona"("VarCorreoP");
